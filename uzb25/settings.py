@@ -1,5 +1,5 @@
 """
-Django settings for maslahat project, on Heroku. For more info, see:
+Django settings for uzb25 project, on Heroku. For more info, see:
 https://github.com/heroku/heroku-django-template
 
 For more information on this file, see
@@ -51,7 +51,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-ROOT_URLCONF = 'maslahat.urls'
+ROOT_URLCONF = 'uzb25.urls'
 
 TEMPLATES = [
     {
@@ -71,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'maslahat.wsgi.application'
+WSGI_APPLICATION = 'uzb25.wsgi.application'
 
 
 # Database

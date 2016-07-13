@@ -9,6 +9,6 @@ register = template.Library()
 
 @register.filter
 @stringfilter
-def make_maslahat_id(value):
+def make_uzb25_id(value):
     hashids = Hashids(salt=settings.SECRET_KEY)
     return hashids.encode(int(value))

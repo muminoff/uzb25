@@ -1,1 +1,1 @@
-web: gunicorn maslahat.wsgi --log-file -
+web: gunicorn uzb25.wsgi --log-file -
