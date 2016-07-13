@@ -19,9 +19,6 @@ import pickle
 from urllib.parse import urlparse
 redis_url = urlparse(os.environ.get('REDIS_URL'))
 
-# Stathat
-from stathat import StatHat
-
 # Hashids
 from hashids import Hashids
 
@@ -119,8 +116,6 @@ def top_liked_posts(request):
 
 
 def index(request):
-    stats = StatHat(settings.STATHAT_ACCOUNT)
-    stats.count('user.visited', 1)
     return render(request, 'index.html')
 
 
