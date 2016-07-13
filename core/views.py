@@ -116,7 +116,8 @@ def top_liked_posts(request):
 
 
 def index(request):
-    return render(request, 'index.html')
+    context = { "cover_url": settings.FACEBOOK_GROUP_COVER_URL }
+    return render(request, 'index.html', context)
 
 
 def feed(request):

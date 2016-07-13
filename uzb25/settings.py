@@ -24,6 +24,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # SECURITY WARNING: change this before deploying to production!
 SECRET_KEY = 'i+acxn5(akgsn!sr4^qgf(^m&*@+g1@u^t@=8s@axc41ml*f=s'
+DEBUG = True
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
@@ -152,3 +153,4 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 FACEBOOK_APP_ID = os.getenv("FACEBOOK_APP_ID")
 FACEBOOK_APP_SECRET = os.getenv("FACEBOOK_APP_SECRET")
 FACEBOOK_GROUP_ID = os.getenv("FACEBOOK_GROUP_ID")
+FACEBOOK_GROUP_COVER_URL = os.getenv("FACEBOOK_GROUP_COVER_URL")
