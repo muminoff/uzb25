@@ -7,6 +7,9 @@ def menu(request):
     title = None
 
     main_menu = OrderedDict([
+        ('tweets', {
+            'title': _('Онлайн твитлар'),
+        }),
         ('feed', {
             'title': _('Янги постлар'),
         }),

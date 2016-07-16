@@ -120,6 +120,10 @@ def index(request):
     return render(request, 'index.html', context)
 
 
+def tweets(request):
+    return render(request, 'tweets.html')
+
+
 def feed(request):
     context = {
         'new_posts': Post.objects.filter(

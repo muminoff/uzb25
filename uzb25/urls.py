@@ -5,6 +5,7 @@ import core.views
 
 urlpatterns = [
     url(r'^$', core.views.index, name='index'),
+    url(r'^tweets/$', core.views.tweets, name='tweets'),
     url(r'^feed/$', core.views.feed, name='feed'),
     url(r'^about/$', core.views.about, name='about'),
     url(r'^search/$', core.views.search, name='search'),
