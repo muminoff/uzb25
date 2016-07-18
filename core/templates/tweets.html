@@ -10,7 +10,6 @@
                 <th>Пост</th>
                 <th>Манзил</th>
                 <th>Вақти</th>
-                <th>Ҳавола</th>
             </tr>
         </thead>
         <tbody>
@@ -28,13 +27,16 @@ socket.on('connect', function() {
 });
 
 socket.on('tweet', function (data) {
-  var tweet_content = "<tr><td><img src='" + data.avatar +"'/> " + data.username + " (" + data.screenname + ")</td>";
-  tweet_content += "<td>" + data.text + "</td>";
-  tweet_content += "<td>" + data.location + "</td>";
-  tweet_content += "<td>" + data.created_at + "</td>";
-  tweet_content += "<td><a href='https://twitter.com/'>" + data.id + "</a></td>";
-  tweet_content += "</tr>";
-  $("#online_tweets").append(tweet_content);
+  var poster_image_url = data.avatar.replace('normal', 'mini');
+  var tweet_time = new Date(data.created_at);
+  var tweet = "<tr>";
+  tweet += "<td><img src='" + poster_image_url +"'/> ";
+  tweet += data.username + " (" + data.screenname + ")</td>";
+  tweet += "<td>" + data.text + "</td>";
+  tweet += "<td>" + data.location + "</td>";
+  tweet += "<td>" + tweet_time + "</td>";
+  tweet += "</tr>";
+  $("#online_tweets").append(tweet);
 });
 </script>
 {% endblock %}
