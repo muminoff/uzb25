@@ -6,7 +6,7 @@
     <table class="table table-condensed table-hover" id="online_tweets">
         <thead>
             <tr>
-                <th>Муаллиф</th>
+                <th></th>
                 <th>Пост</th>
                 <th>Вақти</th>
             </tr>
@@ -29,7 +29,7 @@ socket.on('tweet', function (data) {
   var poster_image_url = data.avatar.replace('normal', 'mini');
   var tweet_time = new Date(data.created_at);
   var tweet = "<tr>";
-  tweet += "<td><img src='" + poster_image_url +"'/><a href='https://twitter.com/" + data.screenname + "' target='_blank'> " + data.username + "</a></td>";
+  tweet += "<td><a href='https://twitter.com/'" + data.id + "' target='_blank'><img src='" + poster_image_url +"'/></a></td>";
   tweet += "<td>" + data.text + "</td>";
   tweet += "<td>" + tweet_time + "</td>";
   tweet += "</tr>";
