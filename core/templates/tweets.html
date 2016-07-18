@@ -23,6 +23,10 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
 <script>
 var socket = io.connect('http://uzb25bot.herokuapp.com');
+socket.on('connect', function() {
+  console.info('Connected.');
+});
+
 socket.on('tweet', function (data) {
   var tweet_content = "<tr><td><img src='" + data.avatar +"'/> " + data.username + " (" + data.screenname + ")</td>";
   tweet_content += "<td>" + data.text + "</td>";
@@ -30,7 +34,7 @@ socket.on('tweet', function (data) {
   tweet_content += "<td>" + data.created_at + "</td>";
   tweet_content += "<td><a href='https://twitter.com/'>" + data.id + "</a></td>";
   tweet_content += "</tr>";
-  $("#online_tweets").prepend(tweet_content);
+  $("#online_tweets").append(tweet_content);
 });
 </script>
 {% endblock %}
