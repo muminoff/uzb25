@@ -24,7 +24,12 @@
 <script>
 var socket = io.connect('http://uzb25bot.herokuapp.com');
 socket.on('tweet', function (data) {
-  var tweet_content = "<tr><td><img src='" + data.avatar +"'/> " + data.username + "(" + data.screenname + ")</td>" + data.text + "</td></tr>";
+  var tweet_content = "<tr><td><img src='" + data.avatar +"'/> " + data.username + " (" + data.screenname + ")</td>";
+  tweet_content += "<td>" + data.text + "</td>";
+  tweet_content += "<td>" + data.location + "</td>";
+  tweet_content += "<td>" + data.created_at + "</td>";
+  tweet_content += "<td><a href='https://twitter.com/'>" + data.id + "</a></td>";
+  tweet_content += "</tr>";
   $("#online_tweets").append(tweet_content);
 });
 </script>
