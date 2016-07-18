@@ -3,7 +3,7 @@
 {% block content %}
 <div class="container">
     <h3><img src="https://maxcdn.icons8.com/Color/PNG/48/Social_Networks/twitter-48.png" title="Twitter" width="48">Онлайн твитлар</h3>
-    <table class="table table-condensed table-hover" id="online_tweets">
+    <table class="table table-condensed" id="online_tweets">
         <thead>
             <tr>
                 <th></th>
@@ -30,7 +30,7 @@ socket.on('tweet', function (data) {
   var poster_image_url = data.avatar.replace('normal', 'mini');
   var tweet_time = new Date(data.created_at);
   var tweet = "<tr>";
-  tweet += "<td><a href='https://twitter.com/" + data.screenname + "/status/" + data.id + "' target='_blank'><img src='" + poster_image_url +"'/></a></td>";
+  tweet += "<td><a href='https://twitter.com/" + data.screenname + "' target='_blank'><img src='" + poster_image_url +"'/></a></td>";
   tweet += "<td>" + data.text + "</td>";
   tweet += "<td>" + tweet_time + "</td>";
   tweet += "</tr>";
