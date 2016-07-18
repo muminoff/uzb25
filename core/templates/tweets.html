@@ -26,6 +26,7 @@ socket.on('connect', function() {
 });
 
 socket.on('tweet', function (data) {
+  console.log(data);
   var poster_image_url = data.avatar.replace('normal', 'mini');
   var tweet_time = new Date(data.created_at);
   var tweet = "<tr>";
