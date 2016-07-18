@@ -8,7 +8,6 @@
             <tr>
                 <th>Муаллиф</th>
                 <th>Пост</th>
-                <th>Манзил</th>
                 <th>Вақти</th>
             </tr>
         </thead>
@@ -32,7 +31,6 @@ socket.on('tweet', function (data) {
   var tweet = "<tr>";
   tweet += "<td><img src='" + poster_image_url +"'/><a href='https://twitter.com/" + data.screenname + "' target='_blank'> " + data.username + "</a></td>";
   tweet += "<td>" + data.text + "</td>";
-  tweet += "<td>" + data.location + "</td>";
   tweet += "<td>" + tweet_time + "</td>";
   tweet += "</tr>";
   $("#online_tweets").append(tweet);
