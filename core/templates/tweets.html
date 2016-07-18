@@ -30,7 +30,7 @@ socket.on('tweet', function (data) {
   tweet_content += "<td>" + data.created_at + "</td>";
   tweet_content += "<td><a href='https://twitter.com/'>" + data.id + "</a></td>";
   tweet_content += "</tr>";
-  $("#online_tweets").append(tweet_content);
+  $("#online_tweets").prepend(tweet_content);
 });
 </script>
 {% endblock %}
